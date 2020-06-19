@@ -1,0 +1,46 @@
+.wrapper  
+  .main_chat
+    .main_chat__group-info
+      .header-leftbox
+        .current-group
+          %p test
+        .member-list
+          %p member : dadada
+      .group__info__edit-btn
+        = link_to "#", class: "contents__btn" do
+          %p Edit
+    .main_chat__message-list
+      .message
+        .upper-info
+          .upper-info__talker
+            %p test2
+          .upper-info__date
+            %p 20200619
+        .text
+          %p こんにちわ
+      .message
+        .upper-info
+          .upper-info__talker
+            %p test2
+          .upper-info__date
+            %p 20200619
+        .text
+          %p こんにちわ
+      .message
+        .upper-info
+          .upper-info__talker
+            %p test2
+          .upper-info__date
+            %p 20200619
+        .text
+          %p こんにちわ
+    .main_chat__message-form
+      .input-box
+        .text
+          %p type a message
+
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %from.content
+        %input{type: "submit", name: "commit", value: "Send" }
