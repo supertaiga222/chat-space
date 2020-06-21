@@ -5,23 +5,16 @@
         .top-items__name
           = current_user.name
         .top-items__icon
-          = link_to "#", class: "contents__btn" do
-            %i.far.fa-edit
-          = link_to edit_user_path(current_user) do 
-            = icon('fas', 'cog', class: 'contents__btn')
-    .side_bar__group-list
-      .group
-        .group-name
-          %p test
-        .latest-message
-          %p nomessage
-      .group
-        .group-name
-          %p test
-        .latest-message
-          %p nomessage
-      .group
-        .group-name
-          %p test
-        .latest-message
-          %p nomessage
+          = link_to new_group_path do
+            = icon('fas', 'edit', class: 'contents__btn1')
+          = link_to edit_user_path(current_user.id) do 
+            = icon('fas', 'cog', class: 'contents__btn2')
+    .side_bar__groups-list
+      - current_user.groups.each do |group|
+        .group-list
+          = link_to '#' do
+            .group-name
+              = group.name
+            .latest-message
+              メッセージはまだありません。
+        

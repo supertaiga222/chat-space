@@ -22,31 +22,40 @@
       &__icon {
         display: flex;
       }
-        .contents__btn {
+        .contents__btn1 {
+          color: #ffffff;  
+          margin-left: 5px;
+        }
+        .contents__btn2 {
           color: #ffffff;  
           margin-left: 5px;
         }
     }
   }
-  &__group-list {
+  .side_bar__groups-list {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px 20px;
     color:#ffffff ;
     
 
-  }
-  .group {
-    height: 61px;
-    margin-bottom: 40px;
+    .group-list {
+      height: 61px;
+      margin-bottom: 40px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      
 
-    &__group-name {
-      height: 15px;
-    }
-
-    &__latest-message {
-      height: 11px;
-      margin-top:5px ;
+      .group-name {
+        height: 15px;
+      }
+      
+      .latest-message {
+        height: 11px;
+        margin-top:5px ;
+      }
     }
   }
 }
