@@ -3,53 +3,24 @@
     .main_chat__group-info
       .header-leftbox
         .current-group
-          %p test
+          =  @group.name
         .member-list
-          %p member : dadada
+          -  @group.users.each do |user|
+            = user.name
       .group__info__edit-btn
-        = link_to "#", class: "contents__btn" do
-          %p Edit
+        = link_to edit_group_path(@group.id), class: "contents__btn" do
+          Edit 
     .main_chat__message-list
-      .message
-        .upper-info
-          .upper-info__talker
-            %p test2
-          .upper-info__date
-            %p 20200619
-        .text
-          %p こんにちわ
-      .message
-        .upper-info
-          .upper-info__talker
-            %p test2
-          .upper-info__date
-            %p 20200619
-        .text
-          %p こんにちわ
-      .message
-        .upper-info
-          .upper-info__talker
-            %p test2
-          .upper-info__date
-            %p 20200619
-        .text
-          %p こんにちわ
+      .messages
+        = render @messages
     .main_chat__message-form
-      .input-box
-        .text
-          %p type a message
-
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %from.content
-        %input{type: "submit", name: "commit", value: "Send" }
-
       .form
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
-              = icon('fas', 'image', class: 'icon')
-              = f.file_field :image, class: 'hidden'
+        = form_for [@group, @message], html: { class: "input-box"} do |f|
+          .input-box
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+            .form__mask
+              = f.label :image, class: 'form__mask__image' do
+                = icon('fas', 'image', class: 'icon')
+                = f.file_field :image, class: 'hidden'
           = f.submit 'Send', class: 'form__submit'
+
