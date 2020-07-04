@@ -35,6 +35,7 @@
     }
   }
   &__message-list {
+    overflow: scroll;
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding: 35px 40px;
